@@ -80,9 +80,9 @@ void main(){
         printf("2.pop");
         printf("3.display");
         printf("4.exit");
-1
 
-         printf("enter your choice");
+
+        printf("enter your choice");
         scanf("%d",&ch);
 
         switch(ch){
