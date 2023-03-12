@@ -59,21 +59,22 @@ void insertAtEnd(){
             tail = newnode;
         }
 }
+}
 
 //display function for displaying the list
+
 void display(){
+
+    temp = head;
 
     if(head == NULL){
         printf("list is empty");
     }
     else{
-        temp = head;
-        while(temp!= NULL){
-
+        while(temp != NULL){
             printf("%d",temp->data);
             temp = temp->next;
         }
-
     }
 }
 
@@ -93,9 +94,9 @@ void deleteAtBeggining(){
     }
 }
 
-//delete function for deleting a node from the end of the list
+//delete function for deleting a node from the end of the list only using temp
 
-void deleteAtEnd(){ 
+void deleteAtEnd(){
 
     temp = head;
 
@@ -107,12 +108,49 @@ void deleteAtEnd(){
             temp = temp->next;
         }
         printf("deleted element is %d",tail->data);
-        free(tail);
+        free(temp ->next);
         temp ->next = NULL;
         tail = temp;
+       
     }
 }
  
+ //main function which is a menu driven program to access all functions using switch case
+
+int main(){
+    int choice;
+    while(1){
+        printf("1.insert at beggining");
+        printf("2.insert at end");
+        printf("3.delete at beggining");
+        printf("4.delete at end");
+        printf("5.display");
+        printf("6.exit");
+
+        printf("enter your choice");
+        scanf("%d",&choice);
+
+        switch(choice){
+            case 1: insertAtBeggining();
+                    break;
+            case 2: insertAtEnd();
+                    break;
+            case 3: deleteAtBeggining();
+                    break;
+            case 4: deleteAtEnd();
+                    break;
+            case 5: display();
+                    break;
+            case 6: exit(0);
+                    break;
+            default: printf("invalid choice");
+                    
+           
+        }
+    }
+}
+
+
 
 
 
