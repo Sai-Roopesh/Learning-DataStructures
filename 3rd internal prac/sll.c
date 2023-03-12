@@ -48,7 +48,7 @@ void *insertAtBeggining(){
 
 void insertAtEnd(){
 
-    struct node *newnode = create(){
+    struct node *newnode = create();{
 
         if(head == NULL){
             head = newnode;
